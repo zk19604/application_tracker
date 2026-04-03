@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Applications</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="header">Applications</div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-number total" id="stat-total">0</span>
+      <span class="stat-label">Total</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number active" id="stat-active">0</span>
+      <span class="stat-label">Active</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number interviewing" id="stat-interviewing">0</span>
+      <span class="stat-label">Interviewing</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number offers" id="stat-offers">0</span>
+      <span class="stat-label">Offers</span>
+    </div>
+  </div>
+  <div class="stats-divider"></div>
+
+  <div class="add-section">
+    <div class="add-row">
+      <input class="add-input company" id="input-company" type="text" placeholder="Company" />
+      <input class="add-input role" id="input-role" type="text" placeholder="Role" />
+      <input class="add-input date" id="input-date" type="date" />
+      <select class="add-select status" id="input-status">
+        <option value="Applied">Applied</option>
+        <option value="Screening">Screening</option>
+        <option value="Interview">Interview</option>
+        <option value="Offer">Offer</option>
+        <option value="Rejected">Rejected</option>
+        <option value="Ghosted">Ghosted</option>
+      </select>
+      <input class="add-input salary" id="input-salary" type="text" placeholder="Salary" />
+      <select class="add-select source" id="input-source">
+        <option value="">Source</option>
+        <option value="LinkedIn">LinkedIn</option>
+        <option value="Indeed">Indeed</option>
+        <option value="Glassdoor">Glassdoor</option>
+        <option value="Referral">Referral</option>
+        <option value="Contact">Contact</option>
+        <option value="Website">Website</option>
+        <option value="Email">Email</option>
+        <option value="Other">Other</option>
+      </select>
+      <input class="add-input email" id="input-email" type="email" placeholder="Contact Email" />
+      <button class="add-btn" id="add-btn">+ Add</button>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th data-sort="company">Company <span class="sort-icon"></span></th>
+          <th data-sort="role">Role <span class="sort-icon"></span></th>
+          <th data-sort="date" class="col-date">Date <span class="sort-icon"></span></th>
+          <th data-sort="status" class="col-status">Status <span class="sort-icon"></span></th>
+          <th data-sort="salary" class="col-salary">Salary <span class="sort-icon"></span></th>
+          <th data-sort="source" class="col-source">Source <span class="sort-icon"></span></th>
+          <th>Email</th>
+          <th>Notes</th>
+          <th class="col-del"></th>
+        </tr>
+      </thead>
+      <tbody id="job-tbody"></tbody>
+    </table>
+    <div id="empty-state" class="empty-state" style="display: none;">
+      <div class="empty-state-icon">📋</div>
+      <div class="empty-state-text">No applications yet</div>
+      <div class="empty-state-sub">Add your first job application above</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
